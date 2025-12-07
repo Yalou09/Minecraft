@@ -7,39 +7,35 @@
     <title>Minecraft Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Police inspirée du style rétro de Minecraft */
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
 </head>
 
 <body class="h-screen w-screen overflow-hidden font-['Press_Start_2P']">
 
-    <!-- AUDIO -->
+    <!-- Musique de fond -->
     <audio id="bgMusic" src="./minecraftInGame.mp4" autoplay loop></audio>
 
-    <!-- BACKGROUND -->
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url(/img/fond.png);">
-    </div>
-
-    <!-- OVERLAY -->
+    <!-- Image de fond -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url(/img/fond.png);"></div>
+    <!-- Superposition sombre pour mieux voir le contenu -->
     <div class="absolute inset-0 bg-black/40"></div>
 
-    <!-- CONTENT -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full select-none">
+    <!-- Contenu principal centré -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full select-none pb-16">
 
-        <!-- LOGO -->
+        <!-- Logo Minecraft -->
         <img src="./img/logo.png" class="w-[50%] drop-shadow-lg" alt="Minecraft Logo" />
 
-        <!-- BOUTON SON -->
-        <!-- BOUTON SON EN HAUT À GAUCHE -->
+        <!-- Bouton pour mettre en pause / jouer la musique -->
         <button id="soundButton"
             class="absolute top-4 left-4 bg-gray-700 text-white font-normal text-xs py-1 px-2 rounded border-2 border-gray-800 shadow-lg hover:bg-blue-500 hover:text-yellow-300 transition-all duration-200">
-            Pause Music
+            Pause music
         </button>
 
-
-
-        <!-- MENU BUTTONS -->
-        <div class="flex flex-col gap-3 w-[40%]">
+        <!-- Boutons du menu principal -->
+        <div class="flex flex-col gap-3 w-[40%] mb-16">
 
             <button
                 class="bg-gray-700 text-white font-normal py-3 px-4 rounded border-2 border-gray-800 shadow-lg hover:bg-blue-500 hover:text-yellow-300 transition-all duration-200">
@@ -69,9 +65,16 @@
             </div>
 
         </div>
+
+        <!-- Footer : version et copyright -->
+        <div class="absolute bottom-2 left-0 right-0 px-4 flex justify-between text-xs text-gray-300 select-none">
+            <span>Minecraft 1.8.9</span>
+            <span>Copyright Mojang AB. Do not distribut !</span>
+        </div>
+
     </div>
 
-    <!-- SCRIPT POUR LE BOUTON SON -->
+    <!-- Script pour le bouton son -->
     <script>
         const bgMusic = document.getElementById('bgMusic');
         const soundButton = document.getElementById('soundButton');
